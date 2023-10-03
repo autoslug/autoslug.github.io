@@ -5,11 +5,12 @@
     <title>autoslug jmp</title>
     <meta charset="utf-8">
     <link rel="icon" href="../assets/favicon.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
     <h1>autoslug jmp (jump) links</h1>
-    <table>
+    <table id="sortTable">
         <tr>
             <th><a href="../budget">budget</a></th>
             <td>2023-2024 budget</td>
@@ -59,6 +60,14 @@
             <td>trello workspace/boards</td>
         </tr>
     </table>
+    <script>
+        var mylist = $('#sortTable');
+        var listitems = mylist.find('tr');
+        listitems.sort(function (a, b) {
+            return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+        })
+        $.each(listitems, function (idx, itm) { mylist.append(itm); });
+    </script>
 </body>
 
 </html>
