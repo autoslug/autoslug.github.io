@@ -1,0 +1,142 @@
+/* Base Element Styles */
+/* ------------------- */
+a.links:link,
+a.links:visited,
+a.links:hover,
+a.links:active {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Layout Components */
+/* ----------------- */
+/* Top Bar */
+.topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color:rgb(31, 10, 45);
+    width: 100%;
+}
+.topbarLeft {
+    padding-left: 10px;
+}
+.topbarRight {
+    padding-right: 20px;
+}
+
+/* Middle Box */
+.midbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Bottom Tile */
+.bottomTile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Titles */
+/* ------ */
+/* Generic Title Styles */
+.title {
+    background-color: rgb(36, 16, 50); /* Dark purple background color */
+    color: white;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    padding-bottom: 50px;
+}
+
+/* Top Tile Specific */
+.topTile {
+    background-color: rgb(36, 16, 50); /* Dark purple background color */
+    flex: 0 0 auto;
+    height: 100px;
+}
+
+/* Team Page Specific Styles */
+/* ------------------------- */
+/* Page Title */
+.pageTitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+/* Team Section */
+.teamSection {
+    background-color: rgb(72, 9, 116);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+/* Officer Cards */
+.officerCard {
+    text-align: center;
+    margin: 15px;
+    flex-basis: calc(33.333% - 30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 320px;
+}
+
+.leadershipRow, .officersRow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.officerCard img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.officerCard h2 {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.officerCard p {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+/* Responsive Layout Adjustments */
+/* ----------------------------- */
+@media (max-width: 800px) {
+    .leadershipRow,
+    .officersRow {
+        flex-direction: column;
+    }
+
+    .officerCard {
+        margin-bottom: 20px;
+        flex-basis: 100%;
+    }
+}
+
+/* Additional Styles */
+/* ----------------- */
+/* Add any additional styles or modifications as needed */
