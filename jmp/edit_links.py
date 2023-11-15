@@ -2,6 +2,10 @@
 import sys
 import os
 
+if len(sys.argv) < 1:
+    print("usage: python edit_links.py <add|del> [args]")
+    sys.exit(1)
+
 # Checking if the script is being run from the correct directory (jmp or autoslug.github.io)
 if os.path.basename(
     os.path.dirname(os.path.realpath(__file__))
