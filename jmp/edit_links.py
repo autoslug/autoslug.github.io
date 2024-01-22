@@ -1,4 +1,5 @@
 # Importing necessary modules
+import argparse
 import sys
 import os
 
@@ -17,17 +18,37 @@ if os.path.basename(
 elif "jmp" not in os.listdir("."):
     os.chdir("..")
 
+if len(sys.argv) < 2:
+    print("usage: python edit_links.py <action> <short> [long] [description]")
+    sys.exit(1)
+
+# use argparse to get an add/del argument, a short, long, and description argument for add, and a short argument for del
+parser = argparse.ArgumentParser()
+parser.add_argument("action", help="add or del")
+parser.add_argument("short", help="short link to add or delete")
+parser.add_argument(
+    "long",
+    help="full url of the link, required if adding",
+    nargs="?" if sys.argv[1] == "del" else 1,
+)
+parser.add_argument(
+    "description",
+    help="description of the link, required if adding",
+    nargs="?" if sys.argv[1] == "del" else 1,
+)
+args = parser.parse_args()
+
 # Checking if the user wants to add a new link
-if sys.argv[1] == "add":
+if args.action == "add":
     # Checking if the user has provided all the required arguments
-    if len(sys.argv) != 5:
-        print("usage: python edit_links.py add <short> <long> <description>")
-        sys.exit(1)
+    # if len(sys.argv) != 5:
+    #     print("usage: python edit_links.py add <short> <long> <description>")
+    #     sys.exit(1)
 
     # Assigning the arguments to variables
-    short = sys.argv[2]
-    long = sys.argv[3]
-    description = sys.argv[4]
+    short = args.short
+    long = args.long[0]
+    description = args.description[0]
 
     # Generating the HTML code for the redirect
     html = '<meta http-equiv="Refresh" content="0; url=\'' + long + "'\" />"
@@ -68,14 +89,14 @@ if sys.argv[1] == "add":
     f.close()
 
 # Checking if the user wants to delete a link
-elif sys.argv[1] == "del":
+elif args.action == "del":
     # Checking if the user has provided all the required arguments
-    if len(sys.argv) != 3:
-        print("usage: python edit_links.py del <short>")
-        sys.exit(1)
+    # if len(sys.argv) != 3:
+    #     print("usage: python edit_links.py del <short>")
+    #     sys.exit(1)
 
     # Assigning the arguments to variables
-    short = sys.argv[2]
+    short = args.short
 
     # delete folder with [short] name if it exists
     try:
