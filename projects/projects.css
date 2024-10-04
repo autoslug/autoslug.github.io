@@ -20,12 +20,14 @@ a.links:active {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    background-color:rgb(31, 10, 45);
+    background-color: rgb(31, 10, 45);
     width: 100%;
 }
+
 .topbarLeft {
     padding-left: 10px;
 }
+
 .topbarRight {
     padding-right: 20px;
 }
@@ -50,7 +52,8 @@ a.links:active {
 /* ------ */
 /* Generic Title Styles */
 .title {
-    background-color: rgb(36, 16, 50); /* Dark purple background color */
+    background-color: rgb(36, 16, 50);
+    /* Dark purple background color */
     color: white;
     text-align: center;
     font-family: 'Orbitron', sans-serif;
@@ -60,7 +63,8 @@ a.links:active {
 
 /* Top Tile Specific */
 .topTile {
-    background-color: rgb(36, 16, 50); /* Dark purple background color */
+    background-color: rgb(36, 16, 50);
+    /* Dark purple background color */
     flex: 0 0 auto;
     height: 100px;
 }
@@ -97,7 +101,8 @@ a.links:active {
     min-height: 320px;
 }
 
-.leadershipRow, .officersRow {
+.leadershipRow,
+.officersRow {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -126,6 +131,7 @@ a.links:active {
 /* Responsive Layout Adjustments */
 /* ----------------------------- */
 @media (max-width: 800px) {
+
     .leadershipRow,
     .officersRow {
         flex-direction: column;
