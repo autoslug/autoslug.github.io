@@ -11,6 +11,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 .topbarRight{
     padding-right: 20px;
